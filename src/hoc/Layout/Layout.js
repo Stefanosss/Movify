@@ -1,15 +1,19 @@
-import React from "react";
+import React, { Component } from "react";
 import classes from "./Layout.module.scss";
-import NavigationItems from "../../components/Navigation/NavigationItems/NavigationItems";
-import Logo from "../../components/Logo/Logo";
+import Sidenav from "../../components/Navigation/Sidenav/Sidenav";
+import Auxiliary from "../Auxiliary/Auxiliary";
+import Header from "../../components/Navigation/Header/Header";
+class Layout extends Component {
+  render() {
+    return (
+      <Auxiliary>
+        <Header />
+        <Sidenav />
 
-const Layout = (props) => {
-  return (
-    <React.Fragment>
-      <Logo />
-      <NavigationItems />
-    </React.Fragment>
-  );
-};
+        <main>{this.props.children}</main>
+      </Auxiliary>
+    );
+  }
+}
 
 export default Layout;

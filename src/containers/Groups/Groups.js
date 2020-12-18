@@ -4,7 +4,11 @@ import NavigationItems from "../../components/Navigation/NavigationItems/Navigat
 
 class Groups extends Component {
   render() {
-    return <NavigationItems />;
+    return (
+      <div>
+        <p>zbeub zbeub</p>
+      </div>
+    );
   }
 }
 
