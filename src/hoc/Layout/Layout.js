@@ -8,9 +8,10 @@ class Layout extends Component {
     return (
       <Auxiliary>
         <Header />
-        <Sidenav />
-
-        <main>{this.props.children}</main>
+        <div className={classes.container}>
+          <Sidenav />
+          <main className={classes.main}>{this.props.children}</main>
+        </div>
       </Auxiliary>
     );
   }

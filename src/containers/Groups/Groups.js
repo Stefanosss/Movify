@@ -6,7 +6,7 @@ class Groups extends Component {
   render() {
     return (
       <div>
-        <p>zbeub zbeub</p>
+        <p>Groups</p>
       </div>
     );
   }

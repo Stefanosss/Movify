@@ -1,16 +1,31 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./index.module.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
+import feedReducer from "./store/reducers/feed";
+import groupsReducer from "./store/reducers/groups";
+import friendsReducer from "./store/reducers/friends";
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const rootReducer = combineReducers({
+  feed: feedReducer,
+  groups: groupsReducer,
+  friends: friendsReducer,
+});
+
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
 
 const app = (
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
 );
 
 ReactDOM.render(app, document.getElementById("root"));

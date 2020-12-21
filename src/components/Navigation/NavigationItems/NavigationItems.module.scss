@@ -1,7 +1,11 @@
-.nav {
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  width: 20%;
-  background-color: red;
+.listnav {
+  font-size: 1.8rem;
+  list-style: none;
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 2rem;
+  color: #28b485;
 }

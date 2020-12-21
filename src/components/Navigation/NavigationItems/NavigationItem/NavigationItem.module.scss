@@ -1,0 +1,31 @@
+.navItem {
+  &:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+}
+
+.navItem a {
+  color: #6e6e6e;
+  display: inline-flex;
+  text-decoration: none;
+  padding: 1.5rem;
+  border-radius: 3rem;
+  transition: all 0.3s;
+
+  &:active,
+  &.active {
+    color: #28b485;
+  }
+
+  &:hover {
+    color: #f4f2f2;
+    background-image: linear-gradient(to right bottom, rgba(#7ed56f, 0.8), rgba(#28b485, 0.8));
+    box-shadow: 0 1rem 2rem rgba(black, 0.15);
+    transform: translateY(-2px);
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+}
