@@ -9,13 +9,11 @@ import { BrowserRouter } from "react-router-dom";
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import feedReducer from "./store/reducers/feed";
 import groupsReducer from "./store/reducers/groups";
-import friendsReducer from "./store/reducers/friends";
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
   feed: feedReducer,
   groups: groupsReducer,
-  friends: friendsReducer,
 });
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
